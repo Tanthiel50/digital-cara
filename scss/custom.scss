@@ -1,0 +1,266 @@
+
+
+
+// CUSTOM COLORS
+
+$theme-colors: (
+  "dark-gray": #191d23,
+  "orange": #ff4825,
+  "light-gray": #c4c4c4,
+  "night-blue": #1e2229,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// HTML
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #191d23;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 1rem;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  appearance: 0;
+  list-style: none;
+  box-sizing: border-box;
+  
+}
+
+.error-message{
+  color: #ff4825;
+}
+
+.success-message{
+  color: white;
+}
+
+
+// **************************************************************INDEX******************************************************************
+
+// NAV
+#navbar{
+  background: #1e2229;
+}
+
+// HERO
+#image-hero {
+  width : 60%;
+  height : 75%;
+  margin: 0 10% 0% 30%;
+}
+
+#text-hero{
+  top: 10%;
+  left: 10%;
+}
+
+.hero-phrase{
+  font-size: 5rem;
+}
+
+
+// THE GAMES
+.games-img{
+  height: 90%;
+  width: 100%;
+}
+
+// NEWSLETTER
+.newsletter-img{
+  height: 80%;
+  width: 70%;
+}
+
+// PICK YOUR PLAYER
+.hero1{
+  background-image: url(../images/knight4.jpg);
+
+}
+
+.hero2{
+  background-image: url(../images/japanese1.jpg);
+
+}
+
+.hero3{
+  background-image: url(../images/cyberpunk2.jpg);
+
+}
+
+.hero-general{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20rem;
+}
+
+// BLOG
+
+.img-blog{
+  width: 100%;
+  height: 15rem;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.category-button{
+  border: solid 1px #ff4825;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.category-button:hover{
+  color: #ff4825;
+}
+
+.blog-link{
+  text-decoration: none;
+  color: #ff4825;
+}
+
+.blog-link:hover{
+  text-decoration: none;
+  color: #ff4825;
+  text-decoration-line: underline;
+  text-decoration-color: #ff4825;
+}
+
+// **************************************************************PROJECT******************************************************************
+
+.hero-project{
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+// **************************************************************DASHBOARD******************************************************************
+.dashboard{
+  margin: 3% auto 3% auto;
+}
+
+.btn-sm{
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  display: inline-block;
+  width: fit-content;
+  padding: 0.6rem 1.2rem;
+  background-color:#ff4825;
+  cursor: pointer;
+  color: white;
+}
+
+.icon{
+  display: none;
+}
+
+// **************************************************************CONTACT******************************************************************
+.btn-sm-dark{
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  display: inline-block;
+  width: fit-content;
+  padding: 0.6rem 1.2rem;
+  background-color:#1e2229;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-sm-dark:hover{
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  display: inline-block;
+  width: fit-content;
+  padding: 0.6rem 1.2rem;
+  background-color:#1e2229;
+  cursor: pointer;
+  color: #ff4825;
+}
+
+// **************************************************************BLOG LISTING******************************************************************
+.blog-filter{
+  background:#ff4825;
+  cursor: pointer;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+}
+
+.blog-filter:hover{
+  background:#191d23;
+  cursor: pointer;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+}
+
+// **************************************************************BLOG SINGLE******************************************************************
+.hero-blog{
+  background-image: url(../images/castle.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30rem;
+}
+
+.img-blog-post{
+  width: 60%;
+  height: 80%;
+}
+
+// **************************************************************MEDIA QUERY******************************************************************
+@media (max-width: 992px) {
+  .hero-phrase{
+    font-size: 3rem;
+  }
+  .project-img3{
+    display: none;
+  }
+  .project-img2{
+    display: none;
+  }
+  .icon{
+    display:block;
+  }
+  .dashboard-title{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-phrase{
+    font-size: 2rem;
+  }
+  .hero-btn{
+    font-size: 1rem;
+  }
+  .table-title{
+    display: none;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .hero-phrase{
+    font-size: 1rem;
+  }
+  .role-img{
+    display: none;
+  }
+}
+
+
