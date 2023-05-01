@@ -10,6 +10,8 @@ $posts = mysqli_query($connection, $query);
 $category_query = "SELECT * FROM categories";
 $categories = mysqli_query($connection, $category_query);
 
+
+
 //fetch post from DB if id is set
 if(isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -24,6 +26,12 @@ if(isset($_GET['id'])) {
     die();
 }
 
+// Récupération de l'id de l'article en cours
+$id_article = $_GET['id'];
+
+//fetch comments from DB
+$comments_query = "SELECT * FROM comments WHERE posts_id = $id_article";
+$comments = mysqli_query($connection, $comments_query);
 ?>
 
     <!-- HERO -->
@@ -54,19 +62,23 @@ if(isset($_GET['id'])) {
     <!-- COMMENTS -->
     <section class="w-75 d-flex flex-column justify-content-center m-auto pb-5 pt-5">
         <h3 class="text-orange">Vos commentaires</h3>
-        <div class="bg-white p-5">
-            <h4 class="text-orange">Votre futur commentaire</h4>
-            <p>Un peu de patience cette fonctionnalité arrive :)</p>
+
+        <?php while ($comment = mysqli_fetch_assoc($comments)) : ?>
+        <div class="bg-white p-5 mb-5">
+            <h4 class="text-orange"><?= $comment['title'] ?></h4>
+            <p><?= $comment['body'] ?></p>
             <div>
-                <p>PSEUDO / Date du commentaire</p>
+                <p> <?= $comment['created_at'] ?></p>
             </div>
         </div>
+        <?php endwhile ?>
     </section>
 
     <?php if(isset($_SESSION['user-id'])) : ?>
         <section class="w-75 d-flex flex-column justify-content-center m-auto">
             <h3 class="text-white">Votre avis sur cette <span class="text-orange">MAJ</span> </h3>
             <form action="<?= ROOT_URL ?>add-comment-logic.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="post_id" value="<?php echo $id ?>">
                 <div class="mb-3">
                     <label class="form-label text-white">Titre</label>
                     <input type="text" class="form-control w-100" name="title">
